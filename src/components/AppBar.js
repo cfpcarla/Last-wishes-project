@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    fontWeight: "bold",
   },
   title: {
     fontFamily: `"Times New Roman", Times, serif`,
@@ -36,7 +37,8 @@ export default function ButtonAppBar() {
           <Typography variant="time" className={classes.title}>
            Last Wishes
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button className={classes.menuButton} color="inherit">Login</Button>
+          <Button className={classes.menuButton} color="inherit">Resources</Button>
         </Toolbar>
       </AppBar>
     </div>
