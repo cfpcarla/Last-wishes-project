@@ -4,27 +4,24 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1, 
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    fontWeight: "bold",
   },
   title: {
-    fontFamily: `"Times New Roman", Times, serif`,
-    fontSize: "larger",
+    flexGrow: 1,
+    textAlign: "left",
   },
-  appBar: {
+  appBarStyle: {
     backgroundColor: "#3b5360",
-    padding: "2vh 0 2vh 0.5vw",
-    justifyContent: "space-between",
-    fontWeight: "bold",
-  },
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -32,13 +29,16 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar} >
+      <AppBar position="static" className={classes.appBarStyle}>
         <Toolbar>
-          <Typography variant="time" className={classes.title}>
-           Last Wishes
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            LastWishes
           </Typography>
-          <Button className={classes.menuButton} color="inherit">Login</Button>
-          <Button className={classes.menuButton} color="inherit">Resources</Button>
+          <Button color="inherit">Resources</Button>
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
